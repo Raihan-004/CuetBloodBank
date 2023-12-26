@@ -83,54 +83,54 @@ const Home = () => {
         )
     }
 
-    function renderFeatures() {
-        return (
-            <View
-                style={{
-                    marginVertical: SIZES.padding,
-                    width: '100%',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    flexWrap: 'wrap',
-                }}
-            >
-                {categories.map((category, index) => (
-                    <TouchableOpacity
-                        key={index}
-                        style={{
-                            height: 120,
-                            width: 110,
-                            borderColor: COLORS.secondaryWhite,
-                            borderWidth: 2,
-                            backgroundColor: COLORS.white,
-                            borderRadius: 10,
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            marginBottom: 22,
-                        }}
-                    >
-                        <Image
-                            source={category.icon}
-                            resizeMode="contain"
-                            style={{
-                                height: 40,
-                                width: 40,
-                                marginVertical: 12,
-                            }}
-                        />
-                        <Text
-                            style={{
-                                ...FONTS.body3,
-                                color: COLORS.secondaryBlack,
-                            }}
-                        >
-                            {category.title}
-                        </Text>
-                    </TouchableOpacity>
-                ))}
-            </View>
-        )
-    }
+    // function renderFeatures() {
+    //     return (
+    //         <View
+    //             style={{
+    //                 marginVertical: SIZES.padding,
+    //                 width: '100%',
+    //                 flexDirection: 'row',
+    //                 justifyContent: 'space-between',
+    //                 flexWrap: 'wrap',
+    //             }}
+    //         >
+    //             {categories.map((category, index) => (
+    //                 <TouchableOpacity
+    //                     key={index}
+    //                     style={{
+    //                         height: 120,
+    //                         width: 110,
+    //                         borderColor: COLORS.secondaryWhite,
+    //                         borderWidth: 2,
+    //                         backgroundColor: COLORS.white,
+    //                         borderRadius: 10,
+    //                         alignItems: 'center',
+    //                         justifyContent: 'center',
+    //                         marginBottom: 22,
+    //                     }}
+    //                 >
+    //                     <Image
+    //                         source={category.icon}
+    //                         resizeMode="contain"
+    //                         style={{
+    //                             height: 40,
+    //                             width: 40,
+    //                             marginVertical: 12,
+    //                         }}
+    //                     />
+    //                     <Text
+    //                         style={{
+    //                             ...FONTS.body3,
+    //                             color: COLORS.secondaryBlack,
+    //                         }}
+    //                     >
+    //                         {category.title}
+    //                     </Text>
+    //                 </TouchableOpacity>
+    //             ))}
+    //         </View>
+    //     )
+    // }
 
     function renderDonationCard() {
         return (
@@ -154,7 +154,7 @@ const Home = () => {
             <View style={{ marginHorizontal: 22 }}>
                 {renderHeader()}
                 {renderSliderBanner()}
-                {renderFeatures()}
+                {/* {renderFeatures()} */}
                 {renderDonationCard()}
             </View>
         </SafeAreaView>
