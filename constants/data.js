@@ -17,7 +17,7 @@ export const donors = [
     },
     {
         id: '3',
-        image: images.user3,
+        image: images.user6,
         name: 'Rahimun Islam',
         location: 'Chittagong',
         bloodType: 'B-',
@@ -54,22 +54,22 @@ export const categories = [
         icon: icons.categoryIcon2,
         title: 'Donates',
     },
-    {
-        icon: icons.categoryIcon3,
-        title: 'Order Blood',
-    },
-    {
-        icon: icons.categoryIcon4,
-        title: 'Assistant',
-    },
+    // {
+    //     icon: icons.categoryIcon3,
+    //     title: 'Order Blood',
+    // },
+    // {
+    //     icon: icons.categoryIcon4,
+    //     title: 'Assistant',
+    // },
     {
         icon: icons.categoryIcon5,
         title: 'Report',
     },
-    {
-        icon: icons.categoryIcon6,
-        title: 'Campain',
-    },
+    // {
+    //     icon: icons.categoryIcon6,
+    //     title: 'Campain',
+    // },
 ]
 
 export const donationRequests = [
@@ -79,27 +79,27 @@ export const donationRequests = [
         postedDate: '5 min',
     },
     {
-        name: 'Amir Hamza',
-        location: 'Apollo Hospital',
+        name: 'Abrar',
+        location: 'Parkview Hospital',
+        postedDate: '3 min',
+    },
+    {
+        name: 'Roshni',
+        location: 'AB Hospital',
         postedDate: '5 min',
     },
     {
-        name: 'Amir Hamza',
-        location: 'Apollo Hospital',
+        name: 'Amaira',
+        location: 'Ctg Hospital',
+        postedDate: '4 min',
+    },
+    {
+        name: 'Tanvir',
+        location: 'XYZ Hospital',
         postedDate: '5 min',
     },
     {
-        name: 'Amir Hamza',
-        location: 'Apollo Hospital',
-        postedDate: '5 min',
-    },
-    {
-        name: 'Amir Hamza',
-        location: 'Apollo Hospital',
-        postedDate: '5 min',
-    },
-    {
-        name: 'Amir Hamza',
+        name: 'Amir',
         location: 'Apollo Hospital',
         postedDate: '5 min',
     },

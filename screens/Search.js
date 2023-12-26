@@ -60,7 +60,7 @@ const Search = ({ navigation }) => {
                         color={COLORS.black}
                     />
                 </TouchableOpacity>
-                <Text style={{ ...FONTS.h4 }}>Rearch</Text>
+                <Text style={{ ...FONTS.h4 }}>Search</Text>
             </View>
         )
     }
@@ -117,7 +117,7 @@ const Search = ({ navigation }) => {
     const renderItem = ({ item, index }) => {
         return (
             <TouchableOpacity
-                onPress={() => setModalVisible(true)}
+                onPress={() => setModalVisible(true,item)}
                 key={index}
                 style={{
                     flexDirection: 'row',
@@ -218,7 +218,9 @@ const Search = ({ navigation }) => {
         )
     }
 
-    function renderDonorsDetails() {
+
+    // change this for accurate view on the click
+    function renderDonorsDetails(selectedDonor) {
         return (
             <Modal
                 animationType="slide"

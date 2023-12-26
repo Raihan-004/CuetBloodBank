@@ -16,12 +16,12 @@ const DonationCard = (props) => {
                 justifyContent: 'space-between',
                 paddingHorizontal: SIZES.padding,
                 paddingVertical: SIZES.padding,
-                marginVertical: 4,
-                borderColor: COLORS.secondaryWhite,
-                borderWidth: 1,
+                marginVertical: 8,
+                borderColor: COLORS.secondaryGray,
+                borderWidth: 3,
                 elevation: 2,
-                shadowColor: COLORS.secondaryWhite,
-                shadowRadius: 3,
+                shadowColor: COLORS.secondaryGray,
+                shadowRadius: 7,
             }}
         >
             <View
@@ -85,6 +85,7 @@ const DonationCard = (props) => {
                     }}
                 />
 
+                {/* //Here for donation there will be option for contact or sms */}
                 <TouchableOpacity onPress={props.onPress}>
                     <Text
                         style={{

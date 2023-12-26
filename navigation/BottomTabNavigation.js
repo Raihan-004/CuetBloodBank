@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import {
     SimpleLineIcons,
     AntDesign,
+    FontAwesome,
     MaterialIcons,
     Fontisto,
 } from '@expo/vector-icons'
@@ -13,6 +14,8 @@ import { Platform } from 'react-native'
 
 const Tab = createBottomTabNavigator()
 
+
+// this is used for bottom option on home page-> Home, search, request, profile 
 const screenOptions = {
     tabBarShowLabel: false,
     headerShown: false,
@@ -55,8 +58,8 @@ const BottomTabNavigation = () => {
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <AntDesign
-                                name="search1"
+                            <FontAwesome
+                                name="search"
                                 size={24}
                                 color={
                                     focused
@@ -79,18 +82,18 @@ const BottomTabNavigation = () => {
                                 style={{
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    backgroundColor: COLORS.primary,
+                                    backgroundColor: COLORS.secondary,
                                     height: Platform.OS == 'ios' ? 50 : 60,
                                     width: Platform.OS == 'ios' ? 50 : 60,
-                                    top: Platform.OS == 'ios' ? -10 : -20,
+                                    top: Platform.OS == 'ios' ? -5 : -20,
                                     borderRadius:
                                         Platform.OS == 'ios' ? 25 : 30,
                                     borderWidth: 2,
                                     borderColor: COLORS.white,
                                 }}
                             >
-                                <Fontisto
-                                    name="blood-drop"
+                                <AntDesign 
+                                    name="profile"
                                     size={24}
                                     color={COLORS.white}
                                 />

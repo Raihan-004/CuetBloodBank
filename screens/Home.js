@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons'
@@ -6,6 +6,7 @@ import { COLORS, SIZES, FONTS } from '../constants'
 import Slideshow from 'react-native-image-slider-show'
 import { categories } from '../constants/data'
 import DonationCard from '../components/DonationCard'
+import { donationRequests } from '../constants/data'
 
 const Home = () => {
     const [position, setPosition] = useState(0)
@@ -21,7 +22,7 @@ const Home = () => {
     useEffect(() => {
         const toggle = setInterval(() => {
             setPosition(position === dataSource.length - 1 ? 0 : position + 1)
-        }, 1000)
+        }, 3000)
 
         return () => clearInterval(toggle)
     })
@@ -35,6 +36,7 @@ const Home = () => {
                     marginVertical: 12,
                 }}
             >
+                {/* Dashboard page will be shown after Pressed, need to change here */}
                 <TouchableOpacity onPress={() => console.log('Pressed')}>
                     <MaterialCommunityIcons
                         name="view-dashboard"
@@ -54,6 +56,8 @@ const Home = () => {
                             top: 5,
                         }}
                     ></View>
+
+                    {/* Notification page will be shown after Pressed, need to change here */}
                     <TouchableOpacity onPress={() => console.log('Pressed')}>
                         <Ionicons
                             name="notifications-outline"
@@ -130,24 +134,19 @@ const Home = () => {
 
     function renderDonationCard() {
         return (
-            <View>
-                <Text
-                    style={{
-                        ...FONTS.body3,
-                        fontWeight: 'bold',
-                        color: COLORS.secondaryBlack,
-                    }}
-                >
-                    Donation request
-                </Text>
+            //copy from donationRequest
+            <ScrollView>
+            {donationRequests.map((donationRequest, index) => (
+                //see DonationCard for what each request have
+                // we need to change donationRequests from data to get proper output
                 <DonationCard
-                    name="Raihan"
-                    location="Chittagong"
-                    bloodType="O+"
-                    postedDate="5 min"
-                    onPress={() => console.log('Pressed')}
+                    key={index}
+                    name={donationRequest.name}
+                    location={donationRequest.location}
+                    postedDate={donationRequest.postedDate}
                 />
-            </View>
+            ))}
+        </ScrollView>
         )
     }
     return (

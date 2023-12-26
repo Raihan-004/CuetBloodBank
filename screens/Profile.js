@@ -15,7 +15,7 @@ import { COLORS, FONTS, SIZES, images } from '../constants'
 import * as Location from 'expo-location'
 
 const Profile = ({ navigation }) => {
-    const [address, setAddress] = useState('Loading...')
+    const [address, setAddress] = useState('Chittagong')
     const [errorMsg, setErrorMsg] = useState(null)
 
     useEffect(() => {
@@ -26,11 +26,13 @@ const Profile = ({ navigation }) => {
                 return
             }
 
+            // device's current location, including latitude and longitude
             let location = await Location.getCurrentPositionAsync()
             const text = JSON.stringify(location)
             const parsedData = JSON.parse(text)
             const longitude = parsedData.coords.longitude
             const latitude = parsedData.coords.latitude
+            // everse geocoding step converts the latitude and longitude into a human-readable address
             let address = await Location.reverseGeocodeAsync({
                 latitude,
                 longitude,
@@ -53,6 +55,7 @@ const Profile = ({ navigation }) => {
                 }}
             >
                 <TouchableOpacity
+                    // Top left corner on profile "<" 
                     onPress={() => navigation.navigate('Home')}
                     style={{
                         height: 44,
@@ -64,14 +67,17 @@ const Profile = ({ navigation }) => {
                     }}
                 >
                     <MaterialIcons
-                        name="keyboard-arrow-left"
-                        size={24}
+                        name="keyboard-arrow-left" //"<"
+                        size={28}
                         color={COLORS.black}
                     />
                 </TouchableOpacity>
                 <Text style={{ ...FONTS.h4 }}>Profile</Text>
-                <TouchableOpacity onPress={() => console.log('Pressed')}>
-                    <Feather name="edit" size={24} color={COLORS.black} />
+                <TouchableOpacity 
+                 //A new page need to create for profile update so we should change the pressed or do the similar thing like register
+                    onPress={() => console.log('Pressed')
+                }>
+                    <Feather name="edit" size={20} color={COLORS.black} />
                 </TouchableOpacity>
             </View>
         )
@@ -94,7 +100,7 @@ const Profile = ({ navigation }) => {
                         borderRadius: SIZES.padding,
                     }}
                 />
-                <Text style={{ ...FONTS.h2, marginTop: 24 }}>Fahim Ekan</Text>
+                <Text style={{ ...FONTS.h2, marginTop: 24 }}>Raihan</Text>
                 <View
                     style={{
                         flexDirection: 'row',
@@ -128,6 +134,7 @@ const Profile = ({ navigation }) => {
                 }}
             >
                 <TouchableOpacity
+                   
                     onPress={() => console.log('Pressed')}
                     style={{
                         backgroundColor: COLORS.secondary,
@@ -139,8 +146,8 @@ const Profile = ({ navigation }) => {
                         justifyContent: 'center',
                     }}
                 >
-                    <Ionicons
-                        name="person-add-outline"
+                    <AntDesign 
+                        name="phone"
                         size={24}
                         color={COLORS.white}
                     />
@@ -197,7 +204,7 @@ const Profile = ({ navigation }) => {
                         alignItems: 'center',
                     }}
                 >
-                    <Text style={{ ...FONTS.h1 }}>A+</Text>
+                    <Text style={{ ...FONTS.h1 }}>O+</Text>
                     <Text style={{ ...FONTS.body3 }}>Blood Type</Text>
                 </View>
                 <View
@@ -206,7 +213,7 @@ const Profile = ({ navigation }) => {
                         alignItems: 'center',
                     }}
                 >
-                    <Text style={{ ...FONTS.h1 }}>05</Text>
+                    <Text style={{ ...FONTS.h1 }}>03</Text>
                     <Text style={{ ...FONTS.body3 }}>Donated</Text>
                 </View>
                 <View

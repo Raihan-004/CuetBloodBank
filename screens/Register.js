@@ -143,7 +143,7 @@ const Register = ({ navigation }) => {
                         <Button
                             title="REGISTER"
                             filled
-                            onPress={() => navigation.navigate('Home')}
+                            onPress={() => navigation.navigate('Login')}
                             style={{
                                 width: '100%',
                             }}

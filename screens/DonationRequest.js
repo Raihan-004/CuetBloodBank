@@ -30,11 +30,11 @@ const DonationRequest = ({ navigation }) => {
                 >
                     <MaterialIcons
                         name="keyboard-arrow-left"
-                        size={24}
+                        size={28}
                         color={COLORS.black}
                     />
                 </TouchableOpacity>
-                <Text style={{ ...FONTS.h4 }}>Donation Request</Text>
+                <Text style={{ ...FONTS.h4, left: -20, }}>Donation Request</Text>
             </View>
         )
     }
@@ -43,6 +43,8 @@ const DonationRequest = ({ navigation }) => {
         return (
             <ScrollView>
                 {donationRequests.map((donationRequest, index) => (
+                    //see DonationCard for what each request have
+                    // we need to change donationRequests from data to get proper output
                     <DonationCard
                         key={index}
                         name={donationRequest.name}
