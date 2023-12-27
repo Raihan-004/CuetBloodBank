@@ -10,7 +10,8 @@ import Profile from './Profile'
 import Search from './Search'
 import DonationRequest from './DonationRequest'
 import Report from './Report'
-
+import Post from './Post'
+import Notification from './Notification'
 export {
     GetStarted,
     Home,
@@ -24,4 +25,6 @@ export {
     Search,
     DonationRequest,
     Report,
+    Post,
+    Notification,
 }

@@ -9,7 +9,7 @@ import {
 } from '@expo/vector-icons'
 import React from 'react'
 import { COLORS } from '../constants'
-import { DonationRequest, Home, Profile, Report, Search } from '../screens'
+import { DonationRequest, Home, Profile, Report, Search,Post, Notification} from '../screens'
 import { Platform } from 'react-native'
 
 const Tab = createBottomTabNavigator()
@@ -52,29 +52,9 @@ const BottomTabNavigation = () => {
                     },
                 }}
             />
-            <Tab.Screen
-                name="Search"
-                component={Search}
-                options={{
-                    tabBarIcon: ({ focused }) => {
-                        return (
-                            <FontAwesome
-                                name="search"
-                                size={24}
-                                color={
-                                    focused
-                                        ? COLORS.primary
-                                        : COLORS.secondaryBlack
-                                }
-                            />
-                        )
-                    },
-                }}
-            />
-
-            <Tab.Screen
-                name="Report"
-                component={Report}
+               <Tab.Screen
+                name="Post"
+                component={Post}
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
@@ -95,15 +75,39 @@ const BottomTabNavigation = () => {
                                 <AntDesign 
                                     name="profile"
                                     size={24}
-                                    color={COLORS.white}
+                                    color={focused
+                                        ? COLORS.primary
+                                        : COLORS.secondaryBlack
+                                }
                                 />
                             </View>
                         )
                     },
                 }}
             />
-
             <Tab.Screen
+                name="Search"
+                component={Search}
+                options={{
+                    tabBarIcon: ({ focused }) => {
+                        return (
+                            <FontAwesome
+                                name="search"
+                                size={24}
+                                color={
+                                    focused
+                                        ? COLORS.primary
+                                        : COLORS.secondaryBlack
+                                }
+                            />
+                        )
+                    },
+                }}
+            />
+
+         
+
+            {/* <Tab.Screen
                 name="DonationRequest"
                 component={DonationRequest}
                 options={{
@@ -121,9 +125,9 @@ const BottomTabNavigation = () => {
                         )
                     },
                 }}
-            />
+            /> */}
 
-            <Tab.Screen
+            {/* <Tab.Screen
                 name="Profile"
                 component={Profile}
                 options={{
@@ -141,7 +145,7 @@ const BottomTabNavigation = () => {
                         )
                     },
                 }}
-            />
+            /> */}
         </Tab.Navigator>
     )
 }

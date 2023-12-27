@@ -49,7 +49,7 @@ const GetStarted = ({ navigation }) => {
                                 textAlign: 'center',
                             }}
                         >
-                            Donate Blood, Save Lives
+                            Donate Blood, Save Lives 
                         </Text>
                     </View>
                     <Button

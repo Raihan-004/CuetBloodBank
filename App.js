@@ -10,6 +10,9 @@ import {
     Register,
     ResetPassword,
     SuccessVerification,
+    Profile,
+    Notification,
+    Post,
 } from './screens'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
@@ -122,6 +125,27 @@ export default function App() {
                 <Stack.Screen
                     name="GetStarted"
                     component={GetStarted}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+                <Stack.Screen
+                    name="Profile"
+                    component={Profile}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+                <Stack.Screen
+                    name="Notification"
+                    component={Notification}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+                <Stack.Screen
+                    name="Post"
+                    component={Post}
                     options={{
                         headerShown: false,
                     }}

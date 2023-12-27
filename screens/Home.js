@@ -1,14 +1,15 @@
 import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons'
+import { MaterialCommunityIcons, Ionicons, AntDesign, FontAwesome } from '@expo/vector-icons'
 import { COLORS, SIZES, FONTS } from '../constants'
 import Slideshow from 'react-native-image-slider-show'
 import { categories } from '../constants/data'
 import DonationCard from '../components/DonationCard'
 import { donationRequests } from '../constants/data'
 
-const Home = () => {
+
+const Home =  ({ navigation }) => {
     const [position, setPosition] = useState(0)
     const [dataSource, setDataSource] = useState([
         {
@@ -36,14 +37,6 @@ const Home = () => {
                     marginVertical: 12,
                 }}
             >
-                {/* Dashboard page will be shown after Pressed, need to change here */}
-                <TouchableOpacity onPress={() => console.log('Pressed')}>
-                    <MaterialCommunityIcons
-                        name="view-dashboard"
-                        size={28}
-                        color={COLORS.primary}
-                    />
-                </TouchableOpacity>
                 <View>
                     <View
                         style={{
@@ -58,10 +51,20 @@ const Home = () => {
                     ></View>
 
                     {/* Notification page will be shown after Pressed, need to change here */}
-                    <TouchableOpacity onPress={() => console.log('Pressed')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
                         <Ionicons
                             name="notifications-outline"
                             size={28}
+                            color={COLORS.black}
+                        />
+                    </TouchableOpacity>
+                </View>
+                <View>
+                    <TouchableOpacity 
+                        onPress={() => navigation.navigate('Profile')}>
+                        <AntDesign
+                            name="user"
+                            size={25}
                             color={COLORS.black}
                         />
                     </TouchableOpacity>

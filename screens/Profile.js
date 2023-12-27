@@ -306,7 +306,7 @@ const Profile = ({ navigation }) => {
                         alignItems: 'center',
                         marginVertical: 12,
                     }}
-                    onPress={() => console.log('Pressed')}
+                    onPress={() => navigation.navigate('Login')}
                 >
                     <AntDesign name="logout" size={24} color={COLORS.primary} />
                     <Text

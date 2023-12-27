@@ -45,32 +45,32 @@ export const donors = [
     },
 ]
 
-export const categories = [
-    {
-        icon: icons.categoryIcon1,
-        title: 'Find Donors',
-    },
-    {
-        icon: icons.categoryIcon2,
-        title: 'Donates',
-    },
-    // {
-    //     icon: icons.categoryIcon3,
-    //     title: 'Order Blood',
-    // },
-    // {
-    //     icon: icons.categoryIcon4,
-    //     title: 'Assistant',
-    // },
-    {
-        icon: icons.categoryIcon5,
-        title: 'Report',
-    },
-    // {
-    //     icon: icons.categoryIcon6,
-    //     title: 'Campain',
-    // },
-]
+// export const categories = [
+//     {
+//         icon: icons.categoryIcon1,
+//         title: 'Find Donors',
+//     },
+//     {
+//         icon: icons.categoryIcon2,
+//         title: 'Donates',
+//     },
+//     {
+//         icon: icons.categoryIcon3,
+//         title: 'Order Blood',
+//     },
+//     {
+//         icon: icons.categoryIcon4,
+//         title: 'Assistant',
+//     },
+//     {
+//         icon: icons.categoryIcon5,
+//         title: 'Report',
+//     },
+//     {
+//         icon: icons.categoryIcon6,
+//         title: 'Campain',
+//     },
+// ]
 
 export const donationRequests = [
     {
