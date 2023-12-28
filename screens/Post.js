@@ -27,15 +27,45 @@ const Post = ({ navigation }) => {
         },
         [dispatchFormState]
     )
-
+    function renderHeader() {
+        return (
+            <View
+                style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                }}
+            >
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('Home')}
+                    style={{
+                        height: 44,
+                        width: 44,
+                        borderRadius: 4,
+                        backgroundColor: COLORS.secondaryWhite,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <MaterialIcons
+                        name="keyboard-arrow-left"
+                        size={28}
+                        color={COLORS.black}
+                    />
+                </TouchableOpacity>
+                
+            </View>
+        )
+    }
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <PageContainer>
                 <ScrollView>
+                    {renderHeader()}
                     <View
                         style={{
                             flex: 1,
-                            marginHorizontal: 32,
+                            marginHorizontal: 22,
                             alignItems: 'center',
                         }}
                     >
@@ -44,7 +74,7 @@ const Post = ({ navigation }) => {
                             resizeMode="contain"
                             style={{
                                 tintColor: COLORS.primary,
-                                marginVertical: 22,
+                                marginVertical: 15,
                             }}
                         />
 

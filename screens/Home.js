@@ -51,7 +51,8 @@ const Home =  ({ navigation }) => {
                     ></View>
 
                     {/* Notification page will be shown after Pressed, need to change here */}
-                    <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
+                    <TouchableOpacity 
+                        onPress={() => navigation.navigate('Notification')}>
                         <Ionicons
                             name="notifications-outline"
                             size={28}
@@ -155,7 +156,7 @@ const Home =  ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
             <View style={{ marginHorizontal: 22 }}>
-                {renderHeader()}
+                {/* {renderHeader()} */}
                 {renderSliderBanner()}
                 {/* {renderFeatures()} */}
                 {renderDonationCard()}

@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { View, Text, Image, TouchableOpacity,Linking } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import PageContainer from '../components/PageContainer'
@@ -75,7 +75,7 @@ const Profile = ({ navigation }) => {
                 <Text style={{ ...FONTS.h4 }}>Profile</Text>
                 <TouchableOpacity 
                  //A new page need to create for profile update so we should change the pressed or do the similar thing like register
-                    onPress={() => console.log('Pressed')
+                    onPress={() => navigation.navigate('EditProfile')
                 }>
                     <Feather name="edit" size={20} color={COLORS.black} />
                 </TouchableOpacity>
@@ -134,8 +134,12 @@ const Profile = ({ navigation }) => {
                 }}
             >
                 <TouchableOpacity
-                   
-                    onPress={() => console.log('Pressed')}
+                    onPress={() => {
+                        const phoneNumber = '01812345678'; // Replace this with the actual phone number
+                        const url = `tel:${phoneNumber}`;
+
+                        Linking.openURL(url).catch((err) => console.error('Error opening phone app:', err));
+                    }}
                     style={{
                         backgroundColor: COLORS.secondary,
                         width: 150,
@@ -163,7 +167,7 @@ const Profile = ({ navigation }) => {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={() => console.log('Pressed')}
+                    onPress={() => navigation.navigate('Post')}
                     style={{
                         backgroundColor: COLORS.primary,
                         width: 150,
@@ -174,7 +178,7 @@ const Profile = ({ navigation }) => {
                         justifyContent: 'center',
                     }}
                 >
-                    <Entypo name="forward" size={24} color={COLORS.white} />
+                    <MaterialIcons name="post-add" size={24} color={COLORS.white} />
                     <Text
                         style={{
                             ...FONTS.body4,
@@ -258,48 +262,7 @@ const Profile = ({ navigation }) => {
                         Available for Donate
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity
-                    style={{
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        marginVertical: 12,
-                    }}
-                    onPress={() => console.log('Pressed')}
-                >
-                    <Ionicons
-                        name="share-outline"
-                        size={24}
-                        color={COLORS.primary}
-                    />
-                    <Text
-                        style={{
-                            ...FONTS.body3,
-                            marginLeft: 24,
-                        }}
-                    >
-                        Invite a friend
-                    </Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                    style={{
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        marginVertical: 12,
-                    }}
-                    onPress={() => console.log('Pressed')}
-                >
-                    <Feather name="info" size={24} color={COLORS.primary} />
-                    <Text
-                        style={{
-                            ...FONTS.body3,
-                            marginLeft: 24,
-                        }}
-                    >
-                        Get help
-                    </Text>
-                </TouchableOpacity>
-
+            
                 <TouchableOpacity
                     style={{
                         flexDirection: 'row',

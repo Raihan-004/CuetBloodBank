@@ -12,6 +12,7 @@ import DonationRequest from './DonationRequest'
 import Report from './Report'
 import Post from './Post'
 import Notification from './Notification'
+import EditProfile from './EditProfile'
 export {
     GetStarted,
     Home,
@@ -27,4 +28,5 @@ export {
     Report,
     Post,
     Notification,
+    EditProfile,
 }

@@ -9,7 +9,7 @@ import {
 } from '@expo/vector-icons'
 import React from 'react'
 import { COLORS } from '../constants'
-import { DonationRequest, Home, Profile, Report, Search,Post, Notification} from '../screens'
+import { DonationRequest, Home, Profile, Report, Search,Post,Notification} from '../screens'
 import { Platform } from 'react-native'
 
 const Tab = createBottomTabNavigator()
@@ -41,6 +41,25 @@ const BottomTabNavigation = () => {
                         return (
                             <SimpleLineIcons
                                 name="home"
+                                size={24}
+                                color={
+                                    focused
+                                        ? COLORS.primary
+                                        : COLORS.secondaryBlack
+                                }
+                            />
+                        )
+                    },
+                }}
+            />
+                 <Tab.Screen
+                name="Search"
+                component={Search}
+                options={{
+                    tabBarIcon: ({ focused }) => {
+                        return (
+                            <FontAwesome
+                                name="search"
                                 size={24}
                                 color={
                                     focused
@@ -85,25 +104,7 @@ const BottomTabNavigation = () => {
                     },
                 }}
             />
-            <Tab.Screen
-                name="Search"
-                component={Search}
-                options={{
-                    tabBarIcon: ({ focused }) => {
-                        return (
-                            <FontAwesome
-                                name="search"
-                                size={24}
-                                color={
-                                    focused
-                                        ? COLORS.primary
-                                        : COLORS.secondaryBlack
-                                }
-                            />
-                        )
-                    },
-                }}
-            />
+       
 
          
 
@@ -127,14 +128,14 @@ const BottomTabNavigation = () => {
                 }}
             /> */}
 
-            {/* <Tab.Screen
-                name="Profile"
-                component={Profile}
+            <Tab.Screen
+                name="Notification"
+                component={Notification}
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <AntDesign
-                                name="user"
+                            <MaterialIcons
+                                name="notifications"
                                 size={24}
                                 color={
                                     focused
@@ -145,7 +146,26 @@ const BottomTabNavigation = () => {
                         )
                     },
                 }}
-            /> */}
+            />
+            <Tab.Screen
+                name="Profile"
+                component={Profile}
+                options={{
+                    tabBarIcon: ({ focused }) => {
+                        return (
+                            <AntDesign
+                            name="user"
+                                size={24}
+                                color={
+                                    focused
+                                        ? COLORS.primary
+                                        : COLORS.secondaryBlack
+                                }
+                            />
+                        )
+                    },
+                }}
+            />
         </Tab.Navigator>
     )
 }
